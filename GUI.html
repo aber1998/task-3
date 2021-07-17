@@ -1,0 +1,197 @@
+<html>
+<head>
+<title> Control </title>
+<link rel="stylesheet" type="text/CSS" href="GUI.CSS " >
+</head>
+
+<body>
+<h1> Robot controller panel </h1>
+
+<p> Motor1 </p>
+
+<div class ="slider1">
+<input type="range" min="0"
+max="180" value="10"
+class="slider11" id="myRange1">
+
+<p1> Value: <span id="demo1"> </span> </p1>
+</div>
+
+  <script>
+ var slider11 = 
+ document.getElementById("myRange1");
+var output1 = 
+document.getElementById("demo1");
+output1.innerHTML = slider11.value;
+
+slider11.oninput = function() {
+output1.innerHTML = this.value;
+}
+</script>
+
+<p> Motor 2 </p> 
+
+<div class ="slider2">
+<input type="range" min="0"
+max="180" value="10"
+class="slider22" id="myRange2">
+<p2> Value: <span id="demo2"> </span> </p2>
+</div>
+<script>
+ var slider22 = 
+ document.getElementById("myRange2");
+ var output2 = 
+document.getElementById("demo2");
+output2.innerHTML = slider22.value;
+
+slider22.oninput = function() {
+output2.innerHTML = this.value;
+}
+</script>
+
+<p> Motor 3 </p> 
+
+<div class ="slider3">
+<input type="range" min="0"
+max="180" value="10"
+class="slider33" id="myRange3">
+<p3> Value: <span id="demo3"> </span> </p3>
+</div>
+<script>
+ var slider33 = 
+ document.getElementById("myRange3");
+var output3 = 
+document.getElementById("demo3");
+output3.innerHTML = slider33.value;
+
+slider33.oninput = function() {
+output3.innerHTML = this.value;
+}
+</script>
+
+<p> Motor 4 </p> 
+
+<div class ="slider4">
+<input type="range" min="0"
+max="180" value="10"
+class="slider44" id="myRange4">
+<p4> Value: <span id="demo4"> </span> </p4>
+</div>
+<script>
+ var slider44 = 
+ document.getElementById("myRange4");
+var output4 = 
+document.getElementById("demo4");
+output4.innerHTML = slider44.value;
+
+slider44.oninput = function() {
+output4.innerHTML = this.value;
+}
+</script>
+
+<p> Motor 5 <p> 
+
+<div class ="slider5">
+<input type="range" min="0"
+max="180" value="10"
+class="slider55" id="myRange5">
+<p5> Value: <span id="demo5"> </span> </p5>
+</div>
+<script>
+ var slider55 = 
+ document.getElementById("myRange5");
+var output5 = 
+document.getElementById("demo5");
+output5.innerHTML = slider55.value;
+
+slider55.oninput = function() {
+output5.innerHTML = this.value;
+}
+</script>
+
+<p> Motor 6 </p> 
+
+<div class ="slider6">
+<input type="range" min="0"
+max="180" value="10"
+class="slider66" id="myRange6">
+<p6> Value: <span id="demo6"> </span> </p6>
+</div>
+
+<script>
+ var slider66 = 
+ document.getElementById("myRange6");
+var output6 = 
+document.getElementById("demo6");
+output6.innerHTML = slider66.value;
+
+slider66.oninput = function() {
+output6.innerHTML = this.value;
+}
+</script>
+
+<button class="button"> Save </button>
+<button class="button"> Run  </button>
+
+
+
+<h1> direction controller panel </h>
+
+<table>
+
+<tr> 
+<th>  </th>
+
+<th> <input type="button" value="Forward"  name ="Forward" 
+style="color:white; font size :20px;
+background:black;
+border-radius: 60px; 
+font-size: 20px; " </th>
+ 
+<th>  </th>
+</tr>
+ 
+<br>
+
+<tr>
+<td> <input type="button" value="Left"  name ="Left " 
+style="color:black;
+ font size: 20px; 
+background:white;
+font-size:20px;
+transform: translate(10%, 200%, 10%	); ">  </td>
+
+<br>
+
+
+
+<td> <input type="button" value="Stop"  name ="Stop" 
+style="color:white; 
+font-size: 20px; 
+background:red;
+border-radius:30px; 
+ margin-left:20px;" >  </td>
+
+<td> <input type="button" value="Right"  name ="Right" 
+style="color:black; font size: 20px; 
+background:white;
+font-size:20px;" >  </td>
+</tr>
+<br>
+
+<tr> 
+<td>  </td>
+<td>  <input type="button" value="Backward"  name ="Backward" 
+style="color:white; font size: 20px; 
+background:black;
+border-radius:50px;
+font-size:20px; " > </td>
+<td> </td>
+<tr>
+
+
+
+
+
+</body>
+</html>

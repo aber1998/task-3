@@ -1,0 +1,291 @@
+{
+  "intents": [
+    {
+      "intent": "other",
+      "examples": [
+        {
+          "text": "Friday"
+        },
+        {
+          "text": "orthopedic"
+        },
+        {
+          "text": "pediatric"
+        },
+        {
+          "text": "surgery"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Reservation",
+      "examples": [
+        {
+          "text": "appointment"
+        },
+        {
+          "text": "beer"
+        },
+        {
+          "text": "Dental"
+        },
+        {
+          "text": "Do you have an appointment?"
+        },
+        {
+          "text": "I want to make an appointment"
+        },
+        {
+          "text": "kaki"
+        },
+        {
+          "text": "leather"
+        },
+        {
+          "text": "mohammed"
+        },
+        {
+          "text": "monday"
+        },
+        {
+          "text": "rehab"
+        },
+        {
+          "text": "saturday"
+        },
+        {
+          "text": "sunday"
+        },
+        {
+          "text": "thursday"
+        },
+        {
+          "text": "tuesday"
+        },
+        {
+          "text": "wednesday"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Welcome",
+      "examples": [
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Welcome"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1626297930767",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1626299767810",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1626299767827",
+      "previous_sibling": "handler_8_1626299767827"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1626300202220",
+      "context": {
+        "time": "#Reservation"
+      },
+      "conditions": "#Reservation",
+      "event_name": "input",
+      "dialog_node": "handler_5_1626300202221"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1626300202220",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1626300202221",
+      "previous_sibling": "handler_5_1626300202221"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1626299767810",
+      "context": {
+        "day": "#Reservation"
+      },
+      "conditions": "#Reservation",
+      "event_name": "input",
+      "dialog_node": "handler_8_1626299767827"
+    },
+    {
+      "type": "standard",
+      "title": "other",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "we wish you a speedy recovery , unavailable"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#other",
+      "dialog_node": "node_10_1626543759782",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "frame",
+      "title": "Reservation",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Which section do you want?"
+              },
+              {
+                "text": "What doctor do you want?"
+              },
+              {
+                "text": "What day do you want?"
+              },
+              {
+                "text": "What time do you want?"
+              },
+              {
+                "text": "Booked"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Reservation",
+      "dialog_node": "node_6_1626298435470",
+      "previous_sibling": "node_10_1626543759782"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Welcome",
+      "dialog_node": "node_8_1626297930767",
+      "previous_sibling": "node_6_1626298435470"
+    },
+    {
+      "type": "slot",
+      "parent": "node_6_1626298435470",
+      "variable": "$day",
+      "dialog_node": "slot_1_1626299767810"
+    },
+    {
+      "type": "slot",
+      "parent": "node_6_1626298435470",
+      "variable": "$time",
+      "dialog_node": "slot_2_1626300202220",
+      "previous_sibling": "slot_1_1626299767810"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome to the good health clinic , how can i serve you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Talks",
+  "language": "en",
+  "description": ""
+}
